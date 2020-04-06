@@ -1,0 +1,45 @@
+@mixin placeholder($color, $family: inherit, $size: inherit) {
+	&::-webkit-input-placeholder {
+		color: $color;
+		font-family: $family;
+		font-size: $size;
+	}
+
+	&::-moz-placeholder {
+		color: $color;
+		font-family: $family;
+		font-size: $size;
+	}
+
+	&:-ms-input-placeholder {
+		color: $color;
+		font-family: $family;
+		font-size: $size;
+	}
+}
+
+@mixin clearfix {
+	&:after {
+		content: "";
+		display: block;
+		clear: both;
+	}
+}
+
+@mixin centerer($horizontal: true, $vertical: true) {
+	position: absolute;
+	@if ($horizontal and $vertical) {
+		top: 50%;
+		left: 50%;
+		-webkit-transform: translate(-50%, -50%);
+		transform: translate(-50%, -50%);
+	} @else if ($horizontal) {
+		left: 50%;
+		-webkit-transform: translate(-50%, 0);
+		transform: translate(-50%, 0);
+	} @else if ($vertical) {
+		top: 50%;
+		-webkit-transform: translate(0, -50%);
+		transform: translate(0, -50%);
+	}
+}
